@@ -14,7 +14,7 @@ namespace FastDeliveriApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "custumers",
+                name: "customers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -27,12 +27,12 @@ namespace FastDeliveriApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_custumers", x => x.Id);
+                    table.PrimaryKey("PK_customers", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
                 table: "custumers",
-                columns: new[] { "Id", "Address", "Email", "Name", "PhomeNumberCustumer", "Status" },
+                columns: new[] { "Id", "Address", "Email", "Name", "PhoneNumberCustumer", "Status" },
                 values: new object[,]
                 {
                     { 1, "Morazan", "JorgeArgueta@univo.edu.sv", "Jorge Argueta", "7889-9639", true },
@@ -44,7 +44,7 @@ namespace FastDeliveriApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "custumers");
+                name: "customers");
         }
     }
 }

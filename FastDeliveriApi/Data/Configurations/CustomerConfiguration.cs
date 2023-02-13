@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FastDeliveriApi.Data.Configurations;
 
-public class CustumerConfiguration : IEntityTypeConfiguration<Custumer>
+public class CustumerConfiguration : IEntityTypeConfiguration<Customer>
 {
-    public void Configure(EntityTypeBuilder<Custumer> builder)
+    public void Configure(EntityTypeBuilder<Customer> builder)
     {
         builder.HasKey(b => b.Id);
         builder.Property(b => b.Name)
@@ -17,7 +17,7 @@ public class CustumerConfiguration : IEntityTypeConfiguration<Custumer>
             builder.Property(b => b.PhoneNumber)
             .HasMaxLength(9)
             .HasColumnType("text")
-            .HasColumnName("PhomeNumberCustumer");
+            .HasColumnName("PhoneNumberCustumer");
 
             builder.Property(b => b.Email)
             .HasMaxLength(120)
@@ -30,7 +30,7 @@ public class CustumerConfiguration : IEntityTypeConfiguration<Custumer>
             .IsRequired();
 
             builder.HasData(
-                new Custumer
+                new Customer
                 {
                     Id = 1,
                     Name = "Jorge Argueta",
@@ -39,7 +39,7 @@ public class CustumerConfiguration : IEntityTypeConfiguration<Custumer>
                     PhoneNumber = "7889-9639",
                     Status = true
                 },
-                new Custumer
+                new Customer
                 {
                     Id = 2,
                     Name = "Javier Ramirez",

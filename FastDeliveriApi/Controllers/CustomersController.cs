@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using FastDeliveriApi.Data;
 using FastDeliveriApi.Entity;
+using FastDeliveriApi.Repositories.Interfaces;
 
 namespace FastDeliveriApi.Controllers;
 
@@ -8,15 +9,20 @@ namespace FastDeliveriApi.Controllers;
 [Route("api/customers")]
 public class CustomersControllers : ControllerBase
 {
-    private readonly FastDeliveriDbContext _context;
-    public CustomersControllers(FastDeliveriDbContext context)
+    private readonly ICustomerRepository _customerRepository;
+
+    public CustomersControllers(ICustomerRepository customerRepository, IUnitOfWork unitOfWork)
     {
-        _context = context;
+        _customerRepository = customerRepository;
+        _unitOfWork = unitOfWork;
     }
+
+    private readonly IUnitOfWork _unitOfWork;
+    
     [HttpGet]
-    public ActionResult<IEnumerable<Custumer>> Get()
+    public ActionResult<IEnumerable<Customer>> Get()
     {
-        var customers = _context.Customers.ToString();
+        var customers = _customerRepository.GetAll();
         return Ok(customers);
     }
 }

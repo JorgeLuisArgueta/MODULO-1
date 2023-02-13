@@ -58,7 +58,7 @@ namespace FastDeliveriApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("custumers");
+                    b.ToTable("customers");
 
                     b.HasData(
                         new

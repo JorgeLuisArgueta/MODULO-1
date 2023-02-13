@@ -21,7 +21,7 @@ namespace FastDeliveriApi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("FastDeliveriApi.Entity.Custumer", b =>
+            modelBuilder.Entity("FastDeliveriApi.Entity.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace FastDeliveriApi.Migrations
                         .IsRequired()
                         .HasMaxLength(9)
                         .HasColumnType("text")
-                        .HasColumnName("PhomeNumberCustumer");
+                        .HasColumnName("PhoneNumberCustumer");
 
                     b.Property<bool>("Status")
                         .HasColumnType("boolean");
