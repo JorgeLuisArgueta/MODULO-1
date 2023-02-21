@@ -1,3 +1,4 @@
+using FastDeliveriApi.Middleware;
 using FastDeliveriApi.Data;
 using FastDeliveriApi.Repositories;
 using FastDeliveriApi.Repositories.Interfaces;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 
@@ -33,6 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ExeptionMiddleware>();
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
@@ -46,6 +50,3 @@ app.MapControllers();
 
 app.Run();
 
-private class CustomerRepository
-{
-}

@@ -29,25 +29,25 @@ public class CustumerConfiguration : IEntityTypeConfiguration<Customer>
             .HasColumnType("text")
             .IsRequired();
 
-            builder.HasData(
-                new Customer
-                {
-                    Id = 1,
-                    Name = "Jorge Argueta",
-                    Email = "JorgeArgueta@univo.edu.sv",
-                    Address = "Morazan",
-                    PhoneNumber = "7889-9639",
-                    Status = true
-                },
-                new Customer
-                {
-                    Id = 2,
-                    Name = "Javier Ramirez",
-                    Email = "JavieraRamirez@univo.edu.sv",
-                    Address = "Morazan",
-                    PhoneNumber = "7999-9639",
-                    Status = true
-                }
-            );
+           // builder.HasData(
+             //   new Customer
+             //   {
+               //     Id = 1,
+               //     Name = "Jorge Argueta",
+              //      Email = "JorgeArgueta@univo.edu.sv",
+               //     Address = "Morazan",
+               //     PhoneNumber = "7889-9639",
+              //      Status = true
+             //   },
+              //  new Customer
+              //  {
+                //    Id = 2,
+                //    Name = "Javier Ramirez",
+                //    Email = "JavieraRamirez@univo.edu.sv",
+                 //   Address = "Morazan",
+                //    PhoneNumber = "7999-9639",
+                 //   Status = true
+               // }
+         // );
     }
 }
