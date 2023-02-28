@@ -29,6 +29,19 @@ public class CustumerConfiguration : IEntityTypeConfiguration<Customer>
             .HasColumnType("text")
             .IsRequired();
 
+            builder.Property(b => b.CreditLimit)
+            .HasColumnType("Decimal(19, 2)")
+            .IsRequired();
+
+
+
+
+
+
+
+
+            
+
            // builder.HasData(
              //   new Customer
              //   {

@@ -1,3 +1,4 @@
+using System.Net;
 using FastDeliveriApi.Exceptions;
 using Newtonsoft.Json;
 
@@ -8,6 +9,7 @@ public class ExeptionMiddleware
     private readonly RequestDelegate _next;
 
     private readonly ILogger<ExeptionMiddleware> _logger;
+    private object context;
 
     public ExeptionMiddleware(RequestDelegate next, ILogger<ExeptionMiddleware> logger)
     {
@@ -15,7 +17,7 @@ public class ExeptionMiddleware
         _logger = logger;
     }
 
-    public async Task InvokeAsync(HttpContent context)
+    public async Task InvokeAsync(HttpContext context)
     {
         try
         {
@@ -31,7 +33,7 @@ public class ExeptionMiddleware
     private Task HandleExeptionAsync(HttpContext Context, Exception ex)
     {
         Context.Response.ContentType = "application/json";
-        HttpStatusCode statusCode = HttpStatuCode.InternalServerError;
+        HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
         var errorDetails = new ErrorDetails
         {
             ErrorType = "Failure",

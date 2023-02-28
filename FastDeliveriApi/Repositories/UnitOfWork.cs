@@ -5,12 +5,11 @@ using FastDeliveriApi.Data;
 using FastDeliveriApi.Repositories.Interfaces;
 
 namespace FastDeliveriApi.Repositories;
-
 internal sealed class UnitOfWork : IUnitOfWork
 {
-    private readonly FastDeliveriApiDbContext _dbContext;
+    private readonly FastDeliveriDbContext _dbContext;
 
-    public UnitOfWork(FastDeliveriApiDbContext dbContext)
+    public UnitOfWork(FastDeliveriDbContext dbContext)
     {
         _dbContext = dbContext;
     }

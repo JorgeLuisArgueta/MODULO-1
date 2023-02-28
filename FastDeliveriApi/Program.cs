@@ -1,5 +1,5 @@
-using FastDeliveriApi.Middleware;
 using FastDeliveriApi.Data;
+using FastDeliveriApi.Middleware;
 using FastDeliveriApi.Repositories;
 using FastDeliveriApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -7,9 +7,12 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
+builder.Services.Decorate<ICustomerRepository, CachedCustomerRepository>();
+
+builder.Services.AddMemoryCache();
 
 var connectinString = builder.Configuration.GetConnectionString("MyDbPgsql");
 builder.Services.AddDbContext<FastDeliveriDbContext>(options => {

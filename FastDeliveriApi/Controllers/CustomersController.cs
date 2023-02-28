@@ -5,6 +5,7 @@ using Mapster;
 using FastDeliveriApi.Entity;
 using FastDeliveriApi.Repositories.Interfaces;
 using FastDeliveriApi.Models;
+using FastDeliveriApi.Exceptions;
 
 namespace FastDeliveriApi.Controllers;
 
@@ -55,7 +56,7 @@ public class CustomersControllers : ControllerBase
             throw new BadRequestException("Body Id is not equal than Url Id");
         }
 
-        var customer = await _customerRepository.GetCustomerById(id);
+        var customer = await _customerRepository.GetCustomerById(id, cancellationToken);
         if(customer is null)
         {
            throw new NotFoundException("Customer", id);

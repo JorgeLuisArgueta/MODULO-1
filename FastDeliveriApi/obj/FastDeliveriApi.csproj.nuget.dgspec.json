@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj": {}
+    "C:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj": {
+    "C:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj",
+        "projectUniqueName": "C:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj",
         "projectName": "FastDeliveriApi",
-        "projectPath": "c:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj",
+        "projectPath": "C:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\FastDeliveriApi.csproj",
         "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\obj\\",
+        "outputPath": "C:\\Users\\MINEDUCYT\\Documents\\Modulo 1 Tareas\\MODULO 1\\FastDeliveriApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,6 +59,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.1, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
